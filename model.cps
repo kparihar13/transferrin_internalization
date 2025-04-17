@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- generated with COPASI 4.44 (Build 295) (http://www.copasi.org) at 2024-11-18T14:50:09Z -->
+<!-- generated with COPASI 4.44 (Build 295) (http://www.copasi.org) at 2025-04-16T22:28:53Z -->
 <?oxygen RNGSchema="http://www.copasi.org/static/schema/CopasiML.rng" type="xml"?>
 <COPASI xmlns="http://www.copasi.org/static/schema" versionMajor="4" versionMinor="44" versionDevel="295" copasiSourcesModified="0">
   <ListOfFunctions>
@@ -143,23 +143,11 @@ Tf MW: 80 kDa = 80000 g/mol
         </Unit>
       </ModelValue>
       <ModelValue key="ModelValue_1" name="KD" simulationType="fixed" addNoise="false">
-        <MiriamAnnotation>
-<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-<rdf:Description rdf:about="#ModelValue_1">
-</rdf:Description>
-</rdf:RDF>
-        </MiriamAnnotation>
         <Unit>
           nmol/l
         </Unit>
       </ModelValue>
       <ModelValue key="ModelValue_2" name="kint" simulationType="fixed" addNoise="false">
-        <MiriamAnnotation>
-<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-<rdf:Description rdf:about="#ModelValue_2">
-</rdf:Description>
-</rdf:RDF>
-        </MiriamAnnotation>
         <Unit>
           min^-1
         </Unit>
@@ -176,12 +164,6 @@ Tf MW: 80 kDa = 80000 g/mol
         </Unit>
       </ModelValue>
       <ModelValue key="ModelValue_4" name="kd" simulationType="fixed" addNoise="false">
-        <MiriamAnnotation>
-<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-<rdf:Description rdf:about="#ModelValue_4">
-</rdf:Description>
-</rdf:RDF>
-        </MiriamAnnotation>
         <InitialExpression>
           &lt;CN=Root,Model=New Model,Vector=Values[KD],Reference=InitialValue>*&lt;CN=Root,Model=New Model,Vector=Values[ka],Reference=InitialValue>
         </InitialExpression>
@@ -206,8 +188,8 @@ Tf MW: 80 kDa = 80000 g/mol
           <Product metabolite="Metabolite_1" stoichiometry="1"/>
         </ListOfProducts>
         <ListOfConstants>
-          <Constant key="Parameter_7480" name="k1" value="0.001"/>
-          <Constant key="Parameter_7477" name="k2" value="0.005"/>
+          <Constant key="Parameter_7484" name="k1" value="0.001"/>
+          <Constant key="Parameter_7482" name="k2" value="0.005"/>
         </ListOfConstants>
         <KineticLaw function="Function_14" unitType="Default" scalingCompartment="CN=Root,Model=New Model,Vector=Compartments[compartment]">
           <ListOfCallParameters>
@@ -241,7 +223,7 @@ Tf MW: 80 kDa = 80000 g/mol
           <Product metabolite="Metabolite_2" stoichiometry="1"/>
         </ListOfProducts>
         <ListOfConstants>
-          <Constant key="Parameter_7481" name="k1" value="0.5"/>
+          <Constant key="Parameter_7487" name="k1" value="0.5"/>
         </ListOfConstants>
         <KineticLaw function="Function_13" unitType="Default" scalingCompartment="CN=Root,Model=New Model,Vector=Compartments[compartment]">
           <ListOfCallParameters>
@@ -287,10 +269,10 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
         </ModelParameterGroup>
         <ModelParameterGroup cn="String=Initial Global Quantities" type="Group">
           <ModelParameter cn="CN=Root,Model=New Model,Vector=Values[ka]" value="0.001" type="ModelValue" simulationType="fixed"/>
-          <ModelParameter cn="CN=Root,Model=New Model,Vector=Values[KD]" value="5" type="ModelValue" simulationType="fixed"/>
-          <ModelParameter cn="CN=Root,Model=New Model,Vector=Values[kint]" value="0.40000000000000002" type="ModelValue" simulationType="fixed"/>
+          <ModelParameter cn="CN=Root,Model=New Model,Vector=Values[KD]" value="25" type="ModelValue" simulationType="fixed"/>
+          <ModelParameter cn="CN=Root,Model=New Model,Vector=Values[kint]" value="0.5" type="ModelValue" simulationType="fixed"/>
           <ModelParameter cn="CN=Root,Model=New Model,Vector=Values[Tf_conc]" value="5" type="ModelValue" simulationType="fixed"/>
-          <ModelParameter cn="CN=Root,Model=New Model,Vector=Values[kd]" value="0.0050000000000000001" type="ModelValue" simulationType="fixed">
+          <ModelParameter cn="CN=Root,Model=New Model,Vector=Values[kd]" value="0.025000000000000001" type="ModelValue" simulationType="fixed">
             <InitialExpression>
               &lt;CN=Root,Model=New Model,Vector=Values[KD],Reference=InitialValue>*&lt;CN=Root,Model=New Model,Vector=Values[ka],Reference=InitialValue>
             </InitialExpression>
@@ -303,14 +285,14 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
                 &lt;CN=Root,Model=New Model,Vector=Values[ka],Reference=InitialValue>
               </InitialExpression>
             </ModelParameter>
-            <ModelParameter cn="CN=Root,Model=New Model,Vector=Reactions[R1],ParameterGroup=Parameters,Parameter=k2" value="0.0050000000000000001" type="ReactionParameter" simulationType="assignment">
+            <ModelParameter cn="CN=Root,Model=New Model,Vector=Reactions[R1],ParameterGroup=Parameters,Parameter=k2" value="0.025000000000000001" type="ReactionParameter" simulationType="assignment">
               <InitialExpression>
                 &lt;CN=Root,Model=New Model,Vector=Values[kd],Reference=InitialValue>
               </InitialExpression>
             </ModelParameter>
           </ModelParameterGroup>
           <ModelParameterGroup cn="CN=Root,Model=New Model,Vector=Reactions[R2]" type="Reaction">
-            <ModelParameter cn="CN=Root,Model=New Model,Vector=Reactions[R2],ParameterGroup=Parameters,Parameter=k1" value="0.40000000000000002" type="ReactionParameter" simulationType="assignment">
+            <ModelParameter cn="CN=Root,Model=New Model,Vector=Reactions[R2],ParameterGroup=Parameters,Parameter=k1" value="0.5" type="ReactionParameter" simulationType="assignment">
               <InitialExpression>
                 &lt;CN=Root,Model=New Model,Vector=Values[kint],Reference=InitialValue>
               </InitialExpression>
@@ -333,7 +315,7 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
       <StateTemplateVariable objectReference="ModelValue_4"/>
     </StateTemplate>
     <InitialState type="initialState">
-      0 0 149978601.02938735 0 18819189874999.996 0.00050000000000000001 0.001 5 0.40000000000000002 5 0.0050000000000000001 
+      0 0 149978601.02938735 0 18819189874999.996 0.00050000000000000001 0.001 25 0.5 5 0.025000000000000001 
     </InitialState>
   </Model>
   <ListOfTasks>
